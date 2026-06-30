@@ -1,0 +1,31 @@
+baseURL = "https://go-ruby-set.github.io/"
+title = "go-ruby-set"
+disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[[params.phases]]
+  name = "Core & membership"
+  status = "ready"
+  blurb = "Insertion-ordered storage with `add` / `add?`, `delete` / `delete?`, `include?`, `size`, `empty?`, `clear`, `each`, `to_a`, `dup`, `merge` and `subtract` — keyed by member identity or through the host `Hasher`."
+[[params.phases]]
+  name = "Set algebra"
+  status = "ready"
+  blurb = "`Union` (`|`/`+`), `Intersection` (`&`), `Difference` (`-`) and `XorSym` (`^`) — the four operators producing fresh sets that preserve first-insertion order."
+[[params.phases]]
+  name = "Predicates"
+  status = "ready"
+  blurb = "`subset?` / `<=`, `proper_subset?` / `<`, `superset?` / `>=`, `proper_superset?` / `>`, `disjoint?`, `intersect?` and `==`, matching MRI's comparison semantics exactly."
+[[params.phases]]
+  name = "Enumeration & higher-order"
+  status = "ready"
+  blurb = "`map` / `collect`, `select` / `reject`, in-place `collect!`, plus `classify`, `group_by`, both `divide` forms, recursive `flatten`, and `sort` via `SortedSlice`."
+[[params.phases]]
+  name = "Element identity (Hasher)"
+  status = "ready"
+  blurb = "A pluggable `Hasher` maps a member to the comparable Go key under which two members coincide — `rbgo` plugs Ruby's `hash` / `eql?`; plain `New` keys members by themselves."
+[[params.phases]]
+  name = "Differential oracle & coverage"
+  status = "ready"
+  blurb = "Set algebra, predicates, `classify`, both `divide` forms and the `Set[…]` inspect computed here and checked byte-for-byte against the system `ruby` (gated on Ruby ≥ 4.0); 100% coverage, gofmt + go vet clean, green across 6 arches and 3 OSes."
